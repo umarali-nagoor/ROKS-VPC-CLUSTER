@@ -19,9 +19,15 @@ resource "ibm_container_vpc_cluster" "cluster" {
   flavor            = "bx2.4x16"
   worker_count      = 3
   resource_group_id = data.ibm_resource_group.resource_group.id
-  kube_version      = "4.17" 
+  kube_version      = "4.14.52_openshift" 
+  disable_public_service_endpoint = true
   zones {
     subnet_id = ibm_is_subnet.subnet1.id
     name      = "ca-mon-1"
   }
 }
+
+data "ibm_container_cluster_config" "cluster" {
+  cluster_name_id = ibm_container_vpc_cluster.cluster.id
+}
+

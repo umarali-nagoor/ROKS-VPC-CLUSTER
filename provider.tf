@@ -1,6 +1,5 @@
 provider "ibm" {
 	region           = "ca-mon"
-        visibility       = "private" 
 }
 
 terraform {
@@ -11,3 +10,6 @@ terraform {
     }
   }
 }
+
+
+
