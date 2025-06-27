@@ -30,3 +30,5 @@ data "ibm_container_cluster_config" "cluster" {
   cluster_name_id = ibm_container_vpc_cluster.cluster.id
 }
 
+data "kubernetes_all_namespaces" "allns" {}
+
