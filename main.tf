@@ -18,7 +18,6 @@ resource "ibm_container_vpc_cluster" "cluster" {
   vpc_id            = ibm_is_vpc.vpc1.id
   worker_count      = 3
   resource_group_id = data.ibm_resource_group.resource_group.id
-  kube_version      = "4.3_openshift"
   flavor            = "bx2.16x64"
   disable_public_service_endpoint = true
   zones {
