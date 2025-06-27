@@ -2,6 +2,10 @@ provider "ibm" {
 	region           = "ca-mon"
 }
 
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 terraform {
   required_providers {
     ibm = {
