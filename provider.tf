@@ -1,5 +1,6 @@
 provider "ibm" {
 	region           = "ca-mon"
+  ibmcloud_api_key = var.ibmcloud_api_key
 }
 
 provider "kubernetes" {
