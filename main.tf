@@ -30,3 +30,9 @@ data "ibm_container_cluster_config" "cluster" {
   cluster_name_id = ibm_container_vpc_cluster.cluster.id
 }
 
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "terraform-example-namespace"
+  }
+}
+
