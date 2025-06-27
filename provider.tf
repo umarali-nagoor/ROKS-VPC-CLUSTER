@@ -4,7 +4,9 @@ provider "ibm" {
 }
 
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  host                   = data.ibm_container_cluster_config.cluster.host
+  token                  = data.ibm_container_cluster_config.cluster.token
+  cluster_ca_certificate = data.ibm_container_cluster_config.cluster.ca_certificate
 }
 
 terraform {
