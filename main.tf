@@ -18,7 +18,7 @@ resource "ibm_container_vpc_cluster" "cluster" {
   vpc_id            = ibm_is_vpc.vpc1.id
   worker_count      = 3
   resource_group_id = data.ibm_resource_group.resource_group.id
-  flavor            = "bx2.16x64"
+  flavor            = "bx3d.4x20"
   disable_public_service_endpoint = true
   zones {
     subnet_id = ibm_is_subnet.subnet1.id
@@ -29,6 +29,4 @@ resource "ibm_container_vpc_cluster" "cluster" {
 data "ibm_container_cluster_config" "cluster" {
   cluster_name_id = ibm_container_vpc_cluster.cluster.id
 }
-
-data "kubernetes_all_namespaces" "allns" {}
 
